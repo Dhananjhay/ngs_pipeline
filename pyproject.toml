@@ -19,20 +19,17 @@ snakebids = ">=0.14.0"
 pandas = [{ version = ">=2.1.1", python = ">=3.12" }]
 
 [tool.poetry.dev-dependencies]
-flake8 = "^4.0.1"
-pytest-console-scripts = "^1.2.1"
-pytest = "^6.2.5"
 black = "^24.0.0"
-pylint = "^2.11.1"
 isort = "^5.10.1"
 poethepoet = "^0.10.0"
 snakefmt = "^0.10.0"
-pygraphviz = "1.7"
-Jinja2 = "^3.0.3"
 
 [tool.poetry.scripts]
 ngs_pipeline = "ngs_pipeline.run:app.run"
 
+[tool.poe.tasks]
+quality_check = { shell = "isort ngs_pipeline/*.py && black ngs_pipeline --check && snakefmt ngs_pipeline --check" }
+quality_fix = { shell = "isort ngs_pipeline/*.py && black ngs_pipeline  && snakefmt ngs_pipeline" }
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
