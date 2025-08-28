@@ -13,17 +13,10 @@ classifiers = [
 ]
 
 [tool.poetry.dependencies]
-python = ">=3.8,<4.0"
-snakemake = [
-    { version=">=7.20,<8", python = "<3.11" },
-    { version=">=8.1.2", python = ">=3.11" },
-]
+python = ">=3.11,<4.0"
+snakemake = ">=8.1.2"
 snakebids = ">=0.14.0"
-pulp = { version="<2.8.0", python = "<3.11" }
-pandas = [
-    { version = "<=2.0.3", python = "<3.9" },
-    { version = ">=2.1.1", python = ">=3.12" },
-]
+pandas = [{ version = ">=2.1.1", python = ">=3.12" }]
 
 [tool.poetry.dev-dependencies]
 flake8 = "^4.0.1"
