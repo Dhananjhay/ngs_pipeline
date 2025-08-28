@@ -1,3 +1,0 @@
-# ngs_pipeline
-
-
